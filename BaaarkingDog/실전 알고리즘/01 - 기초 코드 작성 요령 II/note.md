@@ -79,6 +79,7 @@ cout << s;
 ```
 ### cin/cout에서 주의해야 할 점
 두 명령을 실행시켜줘야 입출력으로 인한 시간초과를 방지할 수 있다.
+참고 : https://www.acmicpc.net/board/view/22716
 ```c++
 ios::sync_with_stdio(0)
 cin.tie(0)
