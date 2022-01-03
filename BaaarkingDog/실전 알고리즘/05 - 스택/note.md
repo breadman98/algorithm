@@ -69,7 +69,18 @@ int main()
 } 
 ```
 
-STL stack
+### STL stack
+
+<strong>추가 및 삭제</strong>
++ `push(n)`: top에 원소를 추가
++ `pop()`: top에 있는 원소를 삭제
+
+<strong>조회</strong>
++ `top()`: top(스택의 처음이 아닌 가장 끝)에 있는 원소를 반환
+
+<strong>기타</strong>
++ `empty()`: 스택이 비어있으면 true 아니면 false를 반환
++ `size()`: 스택 사이즈를 반환
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
