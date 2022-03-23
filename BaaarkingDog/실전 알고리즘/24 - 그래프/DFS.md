@@ -26,7 +26,7 @@ void dfs(){
 vector<int> adj[10];
 bool vis[10];
 
-void dfs(){
+void dfs(int cur){
   vis[cur] = true;
   for(auto nxt : adj[cur]){
     if(vis[nxt]) continue; // 방문했으면 skip
