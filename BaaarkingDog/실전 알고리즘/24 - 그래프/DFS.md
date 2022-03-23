@@ -34,26 +34,6 @@ void dfs(){
   }
 }
 
-<거리 구하는 문제>
-vector<int> adj[10];
-int dist[10];
-
-void bfs(){
-  fill(dist,dist+10,-1); // -1로 모두 초기화
-  queue<int> q;
-  q.push(1);
-  dist[1] = 0; // 1번정점 거리 0으로 줌
-  
-  while(!q.empty()){
-    int cur= q.front(); q.pop();
-    for(auto nxt : adj[cur]){
-      if(dist[nxt] != -1 ) continue; // 방문안했으면 skip
-      q.push(nxt);
-      dist[nxt] = dist[cur]+1; // 거리+1
-    }
-  }
-}
-
 // 사실 비재귀와 재귀는 동작 차이가 있다.
 // 재귀 : 실제 방문 할 때 방문 표시를 남김.
 // 비재귀 : 방문하기 전에 아직 방문하지 않은 곳을 발견하면 그 때 방문표시를 남김.
