@@ -80,7 +80,7 @@ int main(){
     }
 }
 
-## 1. 무방향 그래프
+## 2. 무방향 그래프
 vector<int> adj[10];
 int v,e;
 
