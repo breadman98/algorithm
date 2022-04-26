@@ -2,6 +2,7 @@
 ```c++
 // 인접 리스트 방식으로 저장된 그래프
 // 정점은 1번~V번 까지 순차적으로 매겨져있다고 가정
+<연결 그래프에서 순회>
 
 vector<int> adj[10];
 bool vis[10];
@@ -13,12 +14,20 @@ void bfs(){
   
   while(!q.empty()){
     int cur= q.front(); q.pop();
+    cout<<cur<<' ';
     for(auto nxt : adj[cur]){
       if(vis[nxt]) continue; // 방문했으면 skip
       q.push(nxt);
       vis[nxt] = true;
     }
   }
+}
+// 만약 인접 행렬로 구현한다?
+for문을 다음과 같이 바꿈
+for(int nxt=1; nxt<=V; nxt++){
+  ...
+  adj_matrix[cur][nxt]가 1일 때만 과정을 진행
+  
 }
 
 <거리 구하는 문제>
@@ -64,11 +73,4 @@ void bfs(){
   }
 }
 
-// 만약 인접 행렬로 구현한다?
-for문을 다음과 같이 바꿈
-for(int nxt=1; nxt<=V; nxt++){
-  ...
-  adj_matrix[cur][nxt]가 1일 때만 과정을 진행
-  
-}
 ```
