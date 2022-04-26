@@ -2,8 +2,8 @@
 ```c++
 // 인접 리스트 방식으로 저장된 그래프
 // 정점은 1번~V번 까지 순차적으로 매겨져있다고 가정
-<연결 그래프에서 순회>
 
+<연결 그래프에서 순회>
 vector<int> adj[10];
 bool vis[10];
 
@@ -57,7 +57,7 @@ int v = 9; // 정점의 수
 
 void bfs(){
   queue<int> q;
-  for(int i=1;i<=9;i++){
+  for(int i=1;i<=v;i++){
     if(vis[i]) continue; // for문으로 모든 정점을 간선으로 돌면서 방문했던 곳은 skip. -> 방문하지 않은 곳을 새로 찾는다.
     q.push(i);
     vis[i] = true;
