@@ -1,0 +1,74 @@
+```c++
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int p[100001];
+tuple<int,int,int> graph[100001];
+int n,m;
+
+int find(int x){
+	if(p[x]==x) return x;
+	return p[x] = find(p[x]);
+}
+
+bool isSameGroup(int a, int b){
+	a=find(a);
+	b=find(b);
+	
+	if(a==b) return true;
+	if(a<b) p[b] = a;
+	else p[a] = b;
+	return false;
+}
+
+int main()
+{
+	cin>>n>>m;
+	for(int i=0;i<m;i++){
+		int a,b,cost;
+		cin>>a>>b>>cost;
+//		graph[i] = {cost,a,b};
+		get<0>(graph[i]) = cost;
+		get<1>(graph[i]) = a;
+		get<2>(graph[i]) = b;
+	}
+	
+	for(int i=1;i<=n;i++){
+		p[i]=i;
+	}
+	
+	sort(graph,graph+m);
+	
+	int cnt=0;
+	int sum=0;
+	int last=0;
+	
+	for(int i=0;i<m;i++){
+//		int a,b,cost;
+//		tie(cost,a,b) = graph[i];
+		int cost = get<0>(graph[i]);
+		int a = get<1>(graph[i]);
+		int b = get<2>(graph[i]);
+		if(isSameGroup(a,b)) continue;
+		cnt++;
+		sum+=cost;
+		if(cnt==n-1) break;
+	}
+	cout<<sum;
+}
+```
+union-find
+```c++
+int Find(int u) {
+	if (parent[u] == u) return u;
+	return parent[u] = Find(parent[u]);
+}
+
+void Union(int u, int v) {
+	u = Find(u), v = Find(v);
+	if (u == v) return;
+	parent[u] = v;
+	Find(u);
+}
+```
