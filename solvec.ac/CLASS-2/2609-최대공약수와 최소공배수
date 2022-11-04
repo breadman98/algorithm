@@ -1,0 +1,28 @@
+```c++
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int gcd(int a, int b) {
+	int mod;
+	while(b!=0){
+		mod=a%b;
+		a=b;
+		b=mod;
+	}
+	return a;
+}
+
+int lcm(int a,int b){
+	return a*b;
+}
+int main() {
+	int a,b;
+	cin>>a>>b;
+	int G = gcd(a,b);
+	int Gab = lcm(a,b)/G; 
+	cout<<G<<"\n"<<Gab;
+}
+```
